@@ -1,0 +1,124 @@
+html, body {
+    height: 100%; /* Ensure full height */
+    margin: 0; /* Remove default margin */
+}
+
+.dashboard-main {
+    background-color: black;
+    color: green;
+    padding: 20px;
+    text-align: center;
+    min-height: calc(100vh - 40px); /* Fill the viewport height minus the padding */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.btn-pick-team {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 15px 40px; /* Increased padding for a larger button */
+    background-color: green;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 24px; /* Increased font size */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.btn-pick-team:hover {
+    color: white; /* Change text color to white on hover */
+}
+
+.news-section, .stats-section {
+    margin: 40px 0;
+}
+
+.news-section h2, .stats-section h2 {
+    color: green;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.news-row, .stats-row {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.news-article, .stats-card {
+    background-color: black; /* Background color */
+    color: green; /* Text color */
+    padding: 20px;
+    border: 2px solid green; /* Border for emphasis */
+    border-radius: 10px;
+    width: 30%;
+    position: relative; /* Positioning for the Read More section */
+}
+
+.news-article h3, .stats-card h3 {
+    font-size: 28px; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Ensure the text remains green */
+    margin-bottom: 10px;
+}
+
+/* Added styles for Article 1 images */
+.article-images {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center; /* Center the images */
+    gap: 0; /* Ensure no gap between images */
+}
+
+.article-images img {
+    width: 25%; /* Set the width for the images in Article 1 */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Styles for single images in Articles 2 and 3 */
+.article-image {
+    width: 70%; /* Set the width for single images */
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px; /* Add some space above the image */
+}
+
+/* Styles for the Read More section */
+.read-more {
+    background-color: #333; /* Darker background for the read more section */
+    text-align: right; /* Align text to the right */
+    padding: 10px; /* Padding for the read more section */
+    border-top: 2px solid green; /* Border on top for separation */
+    position: absolute; /* Position absolute for connecting */
+    bottom: 0; /* Align to the bottom of the article */
+    left: 0; /* Align to the left of the article */
+    right: 0; /* Align to the right of the article */
+}
+
+.read-more-link {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size for the link */
+}
+
+.read-more-link:hover {
+    text-decoration: underline; /* Underline on hover for effect */
+}
+
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Removes default padding */
+}
+
+li {
+    text-align: center; /* Align text to the center for statistics */
+    margin-bottom: 10px; /* Optional: Adds space between items */
+}
+
+/* Add a class to the stats-list to handle styling separately if needed */
+.stats-list {
+    padding: 0; /* Removes padding for the stats list */
+    margin: 0; /* Removes margin for the stats list */
+}

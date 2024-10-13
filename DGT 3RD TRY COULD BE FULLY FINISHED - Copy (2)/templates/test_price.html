@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Selection Results</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .result-box {
+            border: 1px solid green;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Selected Players</h1>
+        <h2>Total Price: ${{ total_price }} million</h2>
+        <ul>
+            {% for name in player_names %}
+                <li>{{ name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

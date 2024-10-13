@@ -1,0 +1,98 @@
+.stats-main {
+    background-color: black;
+    color: green;
+    padding: 20px;
+    text-align: center;
+}
+
+.stats-table {
+    margin: 20px auto;
+    width: 90%; /* Adjust the width as needed */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+.stats-table th, .stats-table td {
+    border: 2px solid green; /* Add border to table cells */
+    padding: 15px; /* Add padding for table cells */
+    text-align: center; /* Center align text */
+    font-size: 20px; /* Adjust font size for better visibility */
+    position: relative; /* Positioning for the underline effect */
+}
+
+.stats-table th {
+    background-color: green; /* Background color for headers */
+    color: white; /* Text color for headers */
+}
+
+.stats-table th a {
+    color: white; /* Text color for links in headers */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.stats-table th:hover a {
+    color: white; /* Keep header link text white on hover */
+}
+
+/* Underline effect for table headers */
+.stats-table th::after {
+    content: ''; /* Create an empty content for the underline */
+    width: 0%; /* Initial width for the underline effect */
+    height: 2px; /* Height of the underline */
+    background: white; /* Underline color */
+    display: block; /* Display block for positioning */
+    margin: auto; /* Center align the underline */
+    transition: width 0.5s; /* Smooth transition for the underline */
+    position: absolute; /* Position it absolutely relative to the th */
+    bottom: 0; /* Align to the bottom of the header */
+    left: 0; /* Start from the left */
+}
+
+/* Activate the underline effect on hover */
+.stats-table th:hover::after {
+    width: 100%; /* Expand to full width on hover */
+}
+
+.stats-table td {
+    color: green; /* Text color for data cells */
+}
+
+.stats-table a {
+    color: green; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: black; /* Black background */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid green; /* Green border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: green; /* Text color */
+}
+
+.close {
+    color: white; /* Close button color */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red; /* Change color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}

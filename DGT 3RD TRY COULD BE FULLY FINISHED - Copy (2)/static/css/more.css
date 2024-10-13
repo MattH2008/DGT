@@ -1,0 +1,28 @@
+/* logout-button.css */
+
+/* Ensure the entire page has a black background */
+body {
+    background-color: black; /* Set the entire page background to black */
+    color: green; /* Default text color to green */
+    font-family: Arial, sans-serif; /* Set a default font for the body */
+    text-align: center; /* Center the text inside the button */
+}
+
+/* Styling for the logout button */
+.logout-button {
+    display: block; /* Display as a block for full-width button */
+    width: 250px; /* Increase the width of the button */
+    padding: 15px; /* Add more padding around the button */
+    text-align: center; /* Center the text inside the button */
+    background-color: black; /* Black background for the button */
+    color: green; /* Green text color for the button */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners for the button */
+    margin: 30px auto; /* Center the button with auto margins */
+    font-size: 24px; /* Increase font size for better visibility */
+}
+
+.logout-button:hover {
+    background-color: darkgreen; /* Darker green on hover */
+    color: white; /* Change text color to white on hover */
+}

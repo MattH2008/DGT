@@ -1,0 +1,26 @@
+body {
+    background-color: black; /* Set the background to black */
+    color: green; /* Set the text color to green */
+    text-align:center
+}
+
+.info-box {
+    background-color: #1a1a1a; /* Slightly lighter background */
+    border: 2px solid green; /* Green border */
+    padding: 15px; /* Padding around the text */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2em; /* Slightly bigger text */
+    margin: 20px; /* Margin around the box */
+}
+
+.player-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.player-list li {
+    font-size: 1.1em; /* Slightly bigger player names */
+    margin: 10px 0; /* Space between player names */
+}
+

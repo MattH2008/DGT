@@ -1,0 +1,34 @@
+/* General styles for the success page */
+.success-main {
+    background-color: black; /* Black background */
+    color: green; /* Green text color */
+    padding: 40px; /* Padding around the main content */
+    text-align: center; /* Center the text */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Center the main content on the page */
+    max-width: 600px; /* Maximum width of the content */
+}
+
+h2 {
+    font-size: 2rem; /* Font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+p {
+    font-size: 1.2rem; /* Font size for the paragraph */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+a {
+    display: inline-block; /* Make the link behave like a button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: green; /* Button background color */
+    color: black; /* Button text color */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+a:hover {
+    background-color: lightgreen; /* Change background on hover */
+}

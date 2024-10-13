@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="static/css/index.css"> 
+{% extends "base.html" %}
+
+{% block content %}
+<main class="dashboard-main">
+    <a href="{{ url_for('transfers') }}" class="btn-pick-team">Choose Your Team</a>
+
+    <section class="news-section">
+        <h2>Recent News</h2>
+        <div class="news-row">
+            <div class="news-article">
+                <h3>Heard Suffers Injury In Loss To Kapiti</h3>
+                <div class="article-images">
+                    <img src="static/images/mattheard.PNG" alt="Image 1">
+                    <img src="static/images/knee.PNG" alt="Image 2">
+                </div>
+                <div class="read-more">
+                    <a href="{{ url_for('article1') }}" class="read-more-link">Read More ➔</a>
+                </div>
+            </div>
+            <div class="news-article">
+                <h3>Sam Leask Impresses In Recent Weeks</h3>
+                <img src="static/images/samleask.PNG" alt="Image for Article 2" class="article-image">
+                <div class="read-more">
+                    <a href="{{ url_for('article2') }}" class="read-more-link">Read More ➔</a>
+                </div>
+            </div>
+            <div class="news-article">
+                <h3>Rathkeale In Danger Of Not Making Top 4</h3>
+                <img src="static/images/rathkealeteam.PNG" alt="Image for Article 3" class="article-image">
+                <div class="read-more">
+                    <a href="{{ url_for('article3') }}" class="read-more-link">Read More ➔</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2>Top Statistics</h2>
+        <div class="stats-row">
+            <div class="stats-card">
+                <h3>Top Scorers</h3>
+                <ul class="stats-list">
+                    {% for scorer in top_scorers %}
+                        <li>{{ scorer.player_name }}: {{ scorer.goals }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="stats-card">
+                <h3>Top Assists</h3>
+                <ul class="stats-list">
+                    {% for assist in top_assists %}
+                        <li>{{ assist.player_name }}: {{ assist.assists }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="stats-card">
+                <h3>Top Fantasy Points</h3>
+                <ul class="stats-list">
+                    {% for player in top_fantasy_points %}
+                        <li>{{ player.player_name }}: {{ player.fantasy_points }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/points.css') }}">
+{% extends "base.html" %}
+{% block content %}
+<div class="info-box">
+    <p>Points will be added once the game has been played.</p>
+</div>
+
+<h2>Your Selected Team</h2>
+<ul class="player-list">
+    {% for player_name, player_points in players %}
+        <li>{{ player_name }} - {{ player_points }} points</li>
+    {% endfor %}
+</ul>
+{% endblock %}

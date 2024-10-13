@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pick_team.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<main class="pick-team-main">
+    <h2>Pick Your Team</h2>
+    
+    <!-- Display flash messages (errors/success) -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Information about selection requirements -->
+    <div class="selection-requirements">
+        <p><strong>Note:</strong> You must select exactly 5 starting players, including at least:</p>
+        <ul>
+            <li>1 Forward</li>
+            <li>1 Midfielder</li>
+            <li>2 Defenders/Goalkeepers</li>
+        </ul>
+    </div>
+
+    <!-- Team Selection Form -->
+    <form id="pickTeamForm" method="POST" action="{{ url_for('pick_team') }}">
+        <h3>Selected Players</h3>
+        <div id="selectedPlayers" class="players-list">
+            {% if selected_players %}
+                {% for player in selected_players %}
+                <div class="player-card">
+                    <input type="checkbox" name="final_players" value="{{ player.player_name }}:{{ player.position }}:{{ player.price }}" class="player-checkbox">
+                    <label for="player_{{ loop.index }}">{{ player.player_name }} - {{ player.position }} - {{ player.price }} million</label>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No players selected from the transfers page.</p>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn-submit">Submit Final Team</button>
+    </form>
+</main>
+{% endblock %}

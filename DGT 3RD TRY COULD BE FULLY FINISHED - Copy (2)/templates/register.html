@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}  <!-- CSRF token -->
+            <div>
+                {{ form.username.label }} {{ form.username(class="form-control") }}
+                {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password.label }} {{ form.password(class="form-control") }}
+                {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.submit(class="btn-submit") }}
+            </div>
+        </form>
+        <a href="{{ url_for('login') }}">Already have an account? Log In</a>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category != 'success' %}  <!-- Only show non-success messages -->
+                        <div class="{{ category }}">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>

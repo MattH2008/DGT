@@ -1,0 +1,50 @@
+/* Body styling for full-screen background and accessible design */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #006400, #000000, #8B0000, #FFFFFF);
+    font-family: Arial, sans-serif;
+}
+
+/* Container styling to center the content */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* H1 styling for large, bold, accessible text */
+h1 {
+    color: #FFFFFF;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000000;
+}
+
+/* Link styling with larger text and high contrast */
+.links a {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 10px 0;
+    display: inline-block;
+    background-color: #008000;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #006400;
+}
+
+/* Ensure good color contrast and accessibility */
+.links a:focus {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 5px;
+}

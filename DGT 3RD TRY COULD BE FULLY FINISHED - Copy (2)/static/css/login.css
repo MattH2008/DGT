@@ -1,0 +1,90 @@
+/* General body styling */
+body {
+    background-color: #000; /* Black background */
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text for high contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers everything horizontally */
+    align-items: center; /* Centers everything vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Centers text inside elements */
+}
+
+/* Container styling for centering and spacing */
+.container {
+    background-color: #333; /* Dark gray background for the container */
+    border: 2px solid #008000; /* Green border for clear visibility */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.6); /* Soft green shadow for effect */
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Heading styling */
+h1 {
+    color: #00FF00; /* Bright green for emphasis */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Form group styling for spacing */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Input fields styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #008000; /* Green border for input fields */
+    border-radius: 5px;
+    background-color: #222; /* Darker gray input background */
+    color: #fff; /* White text for contrast */
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Submit button styling */
+.btn-submit {
+    background-color: #ff0000; /* Red button for emphasis */
+    color: #fff; /* White text for contrast */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Link styling */
+.register-link {
+    color: #00FF00; /* Bright green for contrast */
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.flash-container {
+    margin-bottom: 20px; /* Add spacing below the message */
+}
+
+.flash-message {
+    font-size: 1.2em; /* Adjust size to be slightly larger */
+    font-weight: bold;
+    color: white;
+    list-style-type: none; /* Removes bullet points */
+    margin: 0;
+}

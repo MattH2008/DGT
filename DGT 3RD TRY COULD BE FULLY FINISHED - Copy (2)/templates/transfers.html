@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/transfers.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<main class="transfers-main">
+    <h2>Select Your Players</h2>
+    <div id="totalCost">Total Cost: 0 million (Max Cost: 50 million)</div>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form id="transferForm" method="POST" action="{{ url_for('transfers') }}">
+        <div class="player-section">
+            <h3>Forwards (Select 2)</h3>
+            {% for player in forwards %}
+            <div>
+                <input type="checkbox" name="selected_players" value="{{ player.player_name }}:{{ player.price }}">
+                {{ player.player_name }} - {{ player.price }} million
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="player-section">
+            <h3>Midfielders (Select 2)</h3>
+            {% for player in midfielders %}
+            <div>
+                <input type="checkbox" name="selected_players" value="{{ player.player_name }}:{{ player.price }}">
+                {{ player.player_name }} - {{ player.price }} million
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="player-section">
+            <h3>Defenders/Goalkeepers (Select 3)</h3>
+            {% for player in defenders %}
+            <div>
+                <input type="checkbox" name="selected_players" value="{{ player.player_name }}:{{ player.price }}">
+                {{ player.player_name }} - {{ player.price }} million
+            </div>
+            {% endfor %}
+        </div>
+        
+        <button type="submit">Submit Team</button>
+    </form>
+
+    <!-- Message box for team submission -->
+    <div class="message-box" id="messageBox" style="display: none;">
+        <p>You have already selected players. To see selected players, go to <a href="{{ url_for('pick_team') }}">pick_team.html</a>.</p>
+    </div>
+</main>
+
+<script>
+    const checkboxes = document.querySelectorAll('input[name="selected_players"]');
+    const totalCostDisplay = document.getElementById('totalCost');
+    let totalCost = 0;
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const price = parseFloat(this.value.split(':')[1]);
+            totalCost += this.checked ? price : -price;
+            totalCostDisplay.innerText = 'Total Cost: ' + totalCost + ' million (Max Cost: 50 million)';
+        });
+    });
+
+    // Display message if players are already selected
+    // (This condition should be updated according to your application logic)
+    const hasSelectedPlayers = false; // Set this condition based on your application's logic
+    if (hasSelectedPlayers) {
+        document.getElementById('messageBox').style.display = 'block';
+    }
+</script>
+{% endblock %}

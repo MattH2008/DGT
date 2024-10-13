@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/already_selected.css') }}"> 
+{% extends "base.html" %}
+
+{% block content %}
+<div class="message-box">
+    <h2>You have already selected your players for this match.</h2>
+    <p>Please return to the points page to view your team.</p>
+</div>
+{% endblock %}

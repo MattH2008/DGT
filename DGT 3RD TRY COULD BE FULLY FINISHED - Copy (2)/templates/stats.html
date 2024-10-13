@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="static/css/stats.css">
+{% extends "base.html" %}
+
+{% block content %}
+<main class="stats-main">
+    <h2>Player Statistics</h2>
+    
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th><a href="{{ url_for('stats', sort='player_name') }}">Player Name</a></th>
+                <th><a href="{{ url_for('stats', sort='goals') }}">Goals</a></th>
+                <th><a href="{{ url_for('stats', sort='assists') }}">Assists</a></th>
+                <th><a href="{{ url_for('stats', sort='yellow_cards') }}">Yellow Cards</a></th>
+                <th><a href="{{ url_for('stats', sort='red_cards') }}">Red Cards</a></th>
+                <th><a href="{{ url_for('stats', sort='own_goals') }}">Own Goals</a></th>
+                <th><a href="{{ url_for('stats', sort='bonus_points') }}">Bonus Points</a></th>
+                <th><a href="{{ url_for('stats', sort='fantasy_points') }}">Fantasy Points</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in player_data %}
+            <tr>
+                <td><a href="#" class="player-link" data-player-name="{{ player.player_name }}">{{ player.player_name }}</a></td>
+                <td>{{ player.goals }}</td>
+                <td>{{ player.assists }}</td>
+                <td>{{ player.yellow_cards }}</td>
+                <td>{{ player.red_cards }}</td>
+                <td>{{ player.own_goals }}</td>
+                <td>{{ player.bonus_points }}</td>
+                <td>{{ player.fantasy_points }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+<!-- Player Profile Modal -->
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-player-name"></h2>
+        <p><strong>Position:</strong> <span id="modal-position"></span></p>
+        <p><strong>Price:</strong> <span id="modal-price"></span></p>
+        <p><strong>Fantasy Points:</strong> <span id="modal-fantasy-points"></span></p>
+        <p><strong>Form:</strong> <span id="modal-form"></span></p>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.player-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const playerName = this.getAttribute('data-player-name');
+
+        // Fetch player profile data
+        fetch(`/get_player_profile/${playerName}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    document.getElementById('modal-player-name').textContent = data.player_name;
+                    document.getElementById('modal-position').textContent = data.position;
+                    document.getElementById('modal-price').textContent = data.price;
+                    document.getElementById('modal-fantasy-points').textContent = data.fantasy_points;
+                    document.getElementById('modal-form').textContent = data.form;
+
+                    // Show the modal
+                    document.getElementById('playerModal').style.display = 'block';
+                }
+            });
+    });
+});
+
+// Close modal functionality
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('playerModal').style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('playerModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
+</script>
+{% endblock %}

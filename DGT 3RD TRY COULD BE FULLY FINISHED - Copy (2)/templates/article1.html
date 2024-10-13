@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article1.css') }}"> 
+{% extends "base.html" %}
+
+{% block content %}
+<main class="article-main">
+    <article class="article-content">
+        <h1>Matt Heard Injured In Bad Loss To Kapiti</h1>
+        <div class="article-images">
+            <img src="{{ url_for('static', filename='images/mattheard.PNG') }}" alt="Matt Heard" class="article-image">
+            <img src="{{ url_for('static', filename='images/knee.PNG') }}" alt="Knee Injury" class="article-image">
+        </div>
+        <p class="article-text">Rathkeale lose their first game of the regular season 3-6 against Kapiti College</p>
+
+        <p class="article-text">The side was servely understrengthed due to injury an illness causing 3 of the 4 main midfeilders being ruled-out which meant debuts for a few players and more minutes for not so experienced players</p>
+
+        <p class="article-text">The remaining midfeilder turned centre-back for the past few games due to injury Matt Heard got his second start in midfield this season. After coming of MOTM performances against Paraparaumu and Whanganui as well as strong performances against Tawa and HIBS, It was a great time to further show his class in his breakthrough season.</p>
+
+        <p class="article-text">The team as well as Matt Heard started the game well by dominating the 50 50s and keeping Kapiti in their own half, but unfortunatley Kapiti hit them on the counter and were 1-0 up after half an hour they hosts quickly made it 2-0 5 minutes later before a Sam Jonas goal just before half time. Left Rathkeale 1-2 down at half-time, with a very-inexperienced midfield Matt Heard and the others managed to do quite well in dominating the game and they were looking to complete the comeback in the seocnd-half.</p>
+
+        <p class="article-text">Kapiti then started the second-half better making it 3 within 2 minutes before a great press from Rathkeale lead to a penalty won by Matt Heard and slotted home by Sam Jonas getting his second for the match. Then on the 60th minute Matt Heard after winning almost all of his 50 50s went strong into another challenge and unfortunatley came out worse with a horrific injury dislocating his knee and having to exit the field without being able to walk. Rathkeale then scored from the resulting free-kick making it 3-3.</p>
+
+        <p class="article-text">But at that point although it being 3-3 the damage had been done by Kapiti with Matt Heard injured there were now know experienced midfielders for Rathkeale on the field and the game blew open with Rathkeale concencdeding 3 goals in the last 20 minutes causing them to loss a hard-fought game by alot despite playing well for the majority of the game. </p>
+    </article>
+</main>
+{% endblock %}

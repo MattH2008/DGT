@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article2.css') }}"> 
+{% extends "base.html" %}
+
+{% block content %}
+<main class="article-main">
+    <article class="article-content">
+        <h1>Sam Leask Impresses In Recent Weeks</h1>
+        <img src="{{ url_for('static', filename='images/samleask.PNG') }}" alt="Sam Leask" class="article-image">
+        <p class="article-text">Sam Leask has become a stand out player despite Rathkeale College's recent struggles.</p>
+
+        <p class="article-text">After being ruled out due to sickness two weeks in a row the centre-forward has come back firing on all cylinders. In a 2-2 draw in GW4 of the regular season he was MOTM with 2 goals for Rathkeale to back it up in the fixture on wednesday he again got the score sheet in a 3-5 narrow loss to Lindisfarne College, adding an assit in the game aswell lead him too two consecutive MOTM's </p>
+
+        <p class="article-text">He looks to continue his incredible form against Hutt Valley High School tonight</p>
+    </article>
+</main>
+{% endblock %}

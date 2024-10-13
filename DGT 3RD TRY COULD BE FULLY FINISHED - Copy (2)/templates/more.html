@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/more.css') }}">
+
+{% extends "base.html" %}
+{% block content %}
+<h1>More Information</h1>
+<p>Additional information and resources.</p>
+
+<a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+
+{% endblock %}

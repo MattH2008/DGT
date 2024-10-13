@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article3.css') }}"> 
+
+{% extends "base.html" %}
+
+{% block content %}
+<main class="article-main">
+    <article class="article-content">
+        <h1>Rathkeale In Danger Of Not Making Top 4</h1>
+        <img src="{{ url_for('static', filename='images/rathkealeteam.PNG') }}" alt="Rathkeale Team" class="article-image">
+        <p class="article-text">Rathkeale find themselves outside the top 4 after being one of the favourites at the start of the season.</p>
+        
+        <img src="{{ url_for('static', filename='images/leaguestandings.PNG') }}" alt="League Standings" class="second-article-image">
+        <p class="article-text">After 5 games they find themselves with 2 wins 2 draws and a loss, however they have a game in hand on the 4 above which could put them into 3rd postion on the table. With the best attack in the league it would have been expected to be fighting for the top spot however a poor defensive record has lead the team to a disappointing start to the season</p>
+
+        <p class="article-text">Injuries have been a big factor in their poor start to the season as they already have had 25 people play for the 1st team this season compared to 18 in the whole of last season. Injuries to main players such as Sam Bliss (On-going Hip Injury) Hamesh Patel (On-Going Ankle Injury) and lastly Matt Heard (Knee Injury) that could force him out for the rest of the season has lead the team to rely on less experience players as well as playing players out of position</p>
+
+        <p class="article-text">The team look to improve their position on the table with a match against top of the table Hutt Valley High school this Friday</p>
+    </article>
+</main>
+{% endblock %}

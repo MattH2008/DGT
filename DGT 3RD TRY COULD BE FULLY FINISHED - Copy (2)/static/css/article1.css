@@ -1,0 +1,46 @@
+.article-main {
+    background-color: black; /* Background color for the article pages */
+    color: green; /* Text color */
+    padding: 20px;
+    text-align: center; /* Center all text in the article */
+}
+
+h1{
+    font-size: 36px;
+}
+    
+.article-content {
+    margin: 0 auto; /* Center the article content */
+    max-width: 800px; /* Set a maximum width for the content */
+    padding: 20px;
+}
+
+
+.article-images {
+    display: flex;
+    justify-content: center; /* Center the images */
+    margin: 10px 0; /* Add some space around images */
+}
+
+.article-image {
+    width: 30%; /* Adjust the width to fit side by side */
+    max-width: 300px; /* Optional: limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}
+.article-text {
+    margin: 20px 0; /* Space above and below the text */
+    font-size: 16px; /* Adjust font size as needed */
+    color: white; /* Change text color to white for contrast */
+    line-height: 1.6; /* Improve readability with line height */
+}
+
+.read-more {
+    margin-top: 20px; /* Add space above the link */
+}
+
+.read-more a {
+    color: green; /* Green color for the link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link bold */
+}

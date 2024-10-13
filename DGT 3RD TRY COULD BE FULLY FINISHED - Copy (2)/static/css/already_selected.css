@@ -1,0 +1,24 @@
+
+.message-box {
+    background-color: #1a1a1a; /* Lighter background */
+    border: 2px solid green; /* Green border */
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%; /* Centered width */
+    text-align: center;
+}
+
+.message-box h2 {
+    color: green; /* Green text for heading */
+    font-weight: bold; /* Bold text */
+    font-size: 1.5em; /* Slightly larger font size */
+}
+
+.message-box p {
+    color: green; /* Black text for paragraph */
+}
+
+body{
+    background-color: black;
+    text-align: center;
+}
